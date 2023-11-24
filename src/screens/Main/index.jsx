@@ -37,12 +37,12 @@ export default function Main() {
         setResultado("")
     }
 
-    return <Box bg="$primary100" p="$2" h={"$3/4"} w={300} borderRadius={"$md"}>
+    return <Box bg="$#AFAFAF" p="$2" h={"$3/4"} w={300} borderRadius={"$md"} >
         <Center h={"$full"}>
             <Heading>Peso Ideal</Heading>
             <FormControl>
                 <FormControlLabel>
-                    <FormControlLabelText>Peso</FormControlLabelText>
+                    <FormControlLabelText>Peso atual</FormControlLabelText>
                 </FormControlLabel>
                 <Input w={"$full"}>
                     <InputField value={peso} onChangeText={setPeso} keyboardType="numeric"/>
@@ -61,14 +61,16 @@ export default function Main() {
                     <Switch value={sexo} onValueChange={setSexo} />
                     <FormControlLabelText>Mulher</FormControlLabelText>
                 </HStack>
+                
                 <Button onPress={calcularHandle}>
                     <ButtonText>Calcular</ButtonText>
                 </Button>
+                <Text> </Text>
                 <Button onPress={limparHandle}>
                     <ButtonText>Limpar</ButtonText>
                 </Button>
                 <Box justifyContent="space-between" alignItems="center" height={100} flexDirection="row">
-                    <Text>Resultado</Text>
+                    <Text>Resultado:</Text>
                     <Text fontWeight="$bold">{resultado}</Text>
                 </Box>
             </FormControl>
